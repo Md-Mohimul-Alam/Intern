@@ -320,10 +320,5 @@ export const items = [
     { id: 318, name: 'Teer Meat Masala', category: 'grocery', subcategories: 'masala-spices', price: 1.99, tott: '/each(100g)', image: '/uploads/product/logo/IMG_8557.jpeg' },
     { id: 319, name: 'Laziza Haleem Mix', category: 'grocery', subcategories: 'color-essences-baking', price: 5.99, tott: '/each (13.22oz)', image: '/uploads/product/logo/IMG_8556.jpeg' },
     { id: 320, name: 'Laziza Vanilla Custard Powder', category: 'grocery', subcategories: 'color-essences-baking', price: 3.49, tott: '/each (300g)', image: '/uploads/product/logo/IMG_8555.jpeg' },
-    { id: 321, name: 'Laziza Kheer Mix', category: 'grocery', subcategories: 'color-essences-baking', price: 3.99, tott: '/each (310gm)', image: '/uploads/product/logo/IMG_8554.jpeg' }
-
-<<<<<<< HEAD
+    { id: 321, name: 'Laziza Kheer Mix', category: 'grocery', subcategories: 'color-essences-baking', price: 3.99, tott: '/each (310gm)', image: '/uploads/product/logo/IMG_8554.jpeg' },
 ];
-=======
-];
->>>>>>> origin/main

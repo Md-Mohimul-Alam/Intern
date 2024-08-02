@@ -153,9 +153,4 @@ const ProductCard = ({
         </div>
     );
 };
-
-<<<<<<< HEAD
 export default ProductCard;
-=======
-export default ProductCard;
->>>>>>> origin/main
