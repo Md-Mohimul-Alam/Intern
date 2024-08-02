@@ -1,0 +1,199 @@
+.left-sidebar {
+    background: #f8f8f8;
+    color: black;
+    top: 65px;
+    position: fixed;
+    left: 0;
+    width: 70px;
+    z-index: 3;
+    height: 100%;
+}
+
+.nav-item {
+    height: 38px !important;
+    width: 60px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    padding-left: 0px;
+    position: relative;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    background: #e1e1e1;
+    background: -moz-linear-gradient(left, #fff 0, #ccc 100%);
+    background: -webkit-linear-gradient(left, #fff 0, #ccc 100%);
+    background: linear-gradient(to right, #fff 0, #ccc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cccccc', GradientType=1);
+}
+
+.img-fluid_side {
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 18px;
+    width: 24px;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.filter-list {
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.segment-list {
+    padding-bottom: 136px;
+}
+
+.menuWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menu-wrapper {
+    width: 245px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.segment {
+    padding-top: px;
+    margin-top: 0px;
+}
+.segment_1 {
+    padding-top: 38px;
+    margin-top: 130px;
+    padding-bottom: 150px;
+}
+
+.filter-wrappr {
+    position: fixed;
+    border-bottom: 1px solid #eee;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    z-index: 1000;
+    width: 250px;
+    background: #f7fff0;
+    top: 65px;
+}
+.FIrst_1_11{
+    margin-bottom: 10px;
+}
+.FIrst_1_11:hover {
+    cursor: pointer;
+    background: #e1e1e1;
+    background: -moz-linear-gradient(left, #fff 0, #ccc 100%);
+    background: -webkit-linear-gradient(left, #fff 0, #ccc 100%);
+    background: linear-gradient(to right, #fff 0, #ccc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cccccc', GradientType=1);
+}
+.FIrst_1 {
+    height: auto !important;
+    text-align: left;
+    align-items: start;
+    margin-left: 2px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 100% !important;
+    background-color: white;
+}
+
+.FIrst_1:hover {
+    cursor: pointer;
+    background: #e1e1e1;
+    background: -moz-linear-gradient(left, #fff 0, #ccc 100%);
+    background: -webkit-linear-gradient(left, #fff 0, #ccc 100%);
+    background: linear-gradient(to right, #fff 0, #ccc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cccccc', GradientType=1);
+}
+
+.multi-collapse {
+    list-style-type: none;
+    margin-left: 22px;
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: white;
+    border-left: 1px dotted rgba(100, 98, 98, 0.85);
+
+}
+li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sidebar-dropdown-link {
+    height: 20px !important;
+}
+
+.sidebar-dropdown-link:hover {
+    cursor: pointer;
+    background: #e1e1e1;
+    background: -moz-linear-gradient(left, #fff 0, #ccc 100%);
+    background: -webkit-linear-gradient(left, #fff 0, #ccc 100%);
+    background: linear-gradient(to right, #fff 0, #ccc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cccccc', GradientType=1);
+}
+
+.sidebar-dropdown-item {
+    height: 25px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding-bottom: 10Yogurtpx !important;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+    background-color: white;
+}
+
+
+.menu-wrapper::-webkit-scrollbar {
+    width: 2px;
+}
+
+.menu-wrapper::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.menu-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.menu-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.menu-wrapper {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.menu-wrapper {
+    -ms-overflow-style: none;
+}
+
+.menu-wrapper::-ms-scrollbar {
+    width: 2px !important;
+}
+
+.menu-wrapper::-ms-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.menu-wrapper::-ms-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.menu-wrapper::-ms-scrollbar-track {
+    background: #f1f1f1;
+}

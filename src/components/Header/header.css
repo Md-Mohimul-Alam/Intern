@@ -1,0 +1,887 @@
+.header{
+    background-color: #f7fff0;
+    color: black;
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100% !important;
+    height: 65px;
+    overflow: hidden;
+    z-index: 150;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+}
+.hamburgerMenu {
+    border: 0;
+    background-color: transparent !important;
+    float: left;
+    padding: 10px;
+    margin-left: 10px;
+    height: auto;
+    outline: 0;
+    border-radius: 2px;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out
+}
+
+.hamburgerMenu:hover {
+    background-color: #acacac !important
+}
+
+ .hamburgerMenu:active {
+    box-shadow: inset 0 0 2px 2px #ffffff
+}
+.headerwrapper{
+    max-width: 100%; 
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    top: 0;
+}
+
+.First{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: 70%;
+}
+.Second{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    justify-content: flex-end !important;
+    width: 20%;
+    height: 100%;
+    float:right !important;
+    padding-top: 14px;
+}
+.Third{
+    right: 0 !important;
+    display: flex !important;
+    align-items: center;
+    width: 10% !important;
+    height: 100%;
+    float:right !important;
+
+}
+
+.hamburgerMenu{
+    padding: 10px;
+  }
+.logo{
+    height: 60px;
+    width: 60px;
+}
+.searchBar{
+    width: 700px;
+    margin-left: 50px;
+    padding-left: 40px;
+    padding-top: 5px;
+}
+li{
+    list-style-type: none;
+    align-items: center !important;
+    justify-content: center !important;
+
+}
+.trackOrder {
+    background: #f7fff0;
+    cursor: pointer;
+}
+
+.trackOrder:hover {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.85);
+}
+
+#loginRegister {
+    background: #f7fff0;
+    cursor: pointer;
+}
+
+#loginRegister:hover {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.85);
+}
+
+
+.btn{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid  #1abe74 !important;
+    border-radius: 6px;
+    height: 38px !important;
+    width: 86px !important;
+    padding: 2px !important;
+
+}
+.btn:hover{
+    border: 1px solid transparent !important;
+    background: #1abe74 !important;
+}
+.bodyTable1{
+    align-items: center;
+    height: auto;
+    width: 400px;
+    z-index: 1000 !important;
+    padding-left: 60px;
+}
+
+.recaptcha .recaptchaTxt {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+div.phoneNumberLogin.outsideDialog {
+    width: 400px;
+    max-width: 100%;
+    padding: 30px
+}
+
+div.phoneNumberLogin .emailLoginBtn svg {
+    margin-right: 10px;
+    margin-top: -3px
+}
+
+div.phoneNumberLogin .employeeLoginMessage {
+    color: red;
+    text-align: center
+}
+
+div.facebookLogin .loginButton {
+    background-color: #49639f;
+    border-color: #3e4e7c
+}
+
+div.facebookLogin .loginButton .svg {
+    margin-top: -3px
+}
+
+div.facebookLogin .loginButton .buttonText {
+    color: #fff;
+    height: 100%;
+    box-sizing: border-box;
+    display: inline;
+    margin-left: 5px
+}
+
+div.facebookLogin .loginButton .isBangla {
+    padding-left: 5px
+}
+
+div.facebookLogin .loginButton.isFacebookUninitialized,div.facebookLogin .loginButton.isSubmitting {
+    background-color: #ddd
+}
+
+div.facebookLogin .loginButton.isFacebookUninitialized .buttonText,div.facebookLogin .loginButton.isSubmitting .buttonText {
+    border-left: solid 1px #999;
+    color: #999
+}
+
+div.facebookLogin .loginButton:hover {
+    background: #364472
+}
+
+div.facebookLogin p {
+    color: red;
+    text-align: center;
+    padding-top: 10px
+}
+
+div.passwordChange {
+    padding-left: 10px
+}
+
+div.passwordChange h1 {
+    font-size: 23px;
+    color: #ff9a1f;
+    font-weight: 700;
+    padding-bottom: 30px
+}
+
+div.passwordChange .error {
+    padding-bottom: 20px;
+    color: #db1e3d;
+    font-size: 14px
+}
+
+div.passwordChange .message {
+    font-size: 15px
+}
+
+div.passwordChange .message .actionButtons {
+    padding-top: 20px
+}
+
+div.passwordChange .message .actionButtons button {
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+div.passwordChange .actionButtons button {
+    color: #fff;
+    background-color: #ff686e;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    height: 35px
+}
+
+div.passwordChange .actionButtons button:hover {
+    background-color: #ff1b25
+}
+
+div.passwordChange .actionButtons button:active {
+    position: relative;
+    top: 1px
+}
+
+div.passwordChange .actionButtons button[disabled] {
+    background-color: #bbb;
+    border-color: #bbb;
+    color: #efefef
+}
+
+div.passwordChange .actionButtons button[disabled]:active {
+    position: static;
+    top: 0
+}
+
+div.passwordChange .phnum table {
+    margin-bottom: 20px
+}
+
+div.passwordChange .phnum td {
+    padding: 5px 15px 5px 0;
+    font-size: 15px
+}
+
+div.phoneNumberLogin .whatsAppText {
+    color: green;
+    font-style: italic;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center
+}
+
+div.phoneNumberLogin .fa-circle-o-notch {
+    position: absolute;
+    top: 45%;
+    left: 50%
+}
+
+div.phoneNumberLogin .last-mui-input {
+    margin-bottom: 30px
+}
+
+div.phoneNumberLogin .loginWithPhoneMessage {
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 15px
+}
+
+div.phoneNumberLogin .actions {
+    clear: both;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+div.phoneNumberLogin .auxText {
+    text-align: center
+}
+
+div.phoneNumberLogin .area-in-address-.Input {
+    margin-top: 9px;
+    float: left;
+    font-size: 16px;
+    color: gray
+}
+
+div.phoneNumberLogin .phnum {
+    padding-top: 10px
+}
+
+div.phoneNumberLogin .phnum .mui-input {
+    margin-bottom: 30px
+}
+
+div.phoneNumberLogin .phnum .errorContainer>span {
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: red;
+    padding-bottom: 15px
+}
+
+div.phoneNumberLogin .phnum div.retryOtp p {
+    text-align: center;
+    color: gray
+}
+
+div.phoneNumberLogin .phnum div.retryOtp.isActivated p {
+    color: #000;
+    cursor: pointer
+}
+
+div.phoneNumberLogin .phnum div.retryOtp.isActivated p:hover {
+    text-decoration: underline
+}
+
+div.phoneNumberLogin select {
+    margin-left: 60px;
+    width: 200px;
+    margin-top: 8px;
+    margin-bottom: 0
+}
+
+@media(max-width: 480px) {
+    div.phoneNumberLogin select {
+        width:inherit;
+        margin-left: 10px
+    }
+}
+
+div.phoneNumberLogin .error {
+    clear: both;
+    text-align: center;
+    color: red;
+    font-size: .8em;
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+div.phoneNumberLogin.outsideDialog {
+    width: 400px;
+    max-width: 100%;
+    padding: 30px
+}
+
+div.phoneNumberLogin .emailLoginBtn svg {
+    margin-right: 10px;
+    margin-top: -3px
+}
+
+div.phoneNumberLogin .employeeLoginMessage {
+    color: red;
+    text-align: center
+}
+
+.facebookDisabledMessageView {
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+@keyframes harmonicMotion {
+    0%,100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(10px)
+    }
+}
+
+.facebookDisabledMessageView .emojiContainer {
+    margin-top: 10px;
+    animation: harmonicMotion 1s infinite;
+    font-size: 15px
+}
+
+.facebookDisabledMessageView .facebookLoginDisabledText {
+    color: #0866ff;
+    font-style: italic;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px
+}
+
+.facebookDisabledMessageView .facebookLoginDisabledText .facebookIconContainer {
+    padding: 0 10px
+}
+
+.facebookDisabledMessageView .facebookLoginDisabledText .facebookDisabledMessageContainer {
+    padding: 0 7px
+}
+
+.authForm .actions {
+    text-align: center;
+    width: 100%
+}
+
+.authForm .altActions {
+    padding-top: 10px;
+    text-align: center
+}
+
+.authForm .altActions a {
+    cursor: pointer
+}
+
+.authForm .altActions a:hover {
+    text-decoration: underline
+}
+
+.authForm .mui-input-error {
+    font-size: 10px
+}
+
+.authForm .loginForm,.authForm .signupForm {
+    clear: both
+}
+
+.authForm .fbLoginSeparator {
+    border-top: dotted 1px #ccc;
+    padding-top: 20px
+}
+
+.authForm .fbLoginSeparator.fbLoginSeparatorWithText {
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    color: #666
+}
+
+.authForm .phnum .last-mui-input {
+    margin-bottom: 25px
+}
+
+.authForm .phnum .auxText a {
+    display: block;
+    margin-bottom: 6px
+}
+
+.authForm .area-in-address-.Input {
+    margin-top: 9px;
+    float: left;
+    font-size: 16px;
+    color: gray
+}
+
+.authForm .error {
+    clear: both;
+    text-align: center;
+    color: red;
+    font-size: .8em;
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+.authForm select {
+    margin-left: 60px;
+    width: 200px;
+    margin-top: 8px
+}
+
+@media(max-width: 480px) {
+    .authForm select {
+        width:inherit;
+        margin-left: 10px
+    }
+}
+
+.emailForm p {
+    color: red;
+    padding-top: 0;
+    padding-bottom: 5px;
+    text-align: center
+}
+
+.emailForm .mui-input {
+    margin-bottom: 30px
+}
+
+.authDialogs .mui-dialog .mui-dialog-window-contents {
+    max-width: 455px
+}
+
+.authForm {
+    color: #464646
+}
+
+.authForm .emailSent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px
+}
+
+.authForm .emailSent .emailSentConfirmation {
+    font-weight: 700;
+    margin-top: 20px
+}
+
+.authForm .emailSent .continueProcess {
+    font-weight: 400;
+    margin: 20px auto;
+    text-align: center
+}
+
+.authForm .loginBtn {
+    width: 100%;
+    border: 1px solid #afaeaf;
+    border-radius: 3px;
+    height: 58px;
+    color: #464646;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+    background: #ff5d61;
+    -webkit-transition: all 450ms cubic-bezier(.23,1,.32,1) 0ms;
+    -moz-transition: all 450ms cubic-bezier(.23,1,.32,1) 0ms;
+    -o-transition: all 450ms cubic-bezier(.23,1,.32,1) 0ms;
+    transition: all 450ms cubic-bezier(.23,1,.32,1) 0ms
+}
+
+.authForm .loginBtn:focus,.authForm .loginBtn:hover {
+    background: #e5595a
+}
+
+.authForm .loginBtn:disabled {
+    background: #afaeaf
+}
+
+.authForm button[type=submit] {
+    border-color: #eb484b;
+    color: #fff;
+    -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 1px 6px rgba(0,0,0,.5);
+    box-shadow: 0 1px 6px rgba(0,0,0,.5);
+    text-transform: uppercase
+}
+
+.authForm .emailLoginBtn {
+    background: #fff
+}
+
+.authForm .emailLoginBtn:hover {
+    background: #f3f3f3
+}
+
+.authForm .orContainer {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 30px
+}
+
+.authForm .orContainer span {
+    background: #fff;
+    display: block;
+    width: 50px;
+    margin: 0 auto;
+    font-size: 15px
+}
+
+.authForm .orContainer:before {
+    position: absolute;
+    top: 8px;
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+    z-index: -1
+}
+.phnum {
+    padding-top: 10px
+}
+
+div.phoneNumberLogin .phnum .mui-input {
+    margin-bottom: 30px
+}
+
+div.phoneNumberLogin .phnum .errorContainer>span {
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: red;
+    padding-bottom: 15px
+}
+
+div.phoneNumberLogin .phnum div.retryOtp p {
+    text-align: center;
+    color: gray
+}
+
+div.phoneNumberLogin .phnum div.retryOtp.isActivated p {
+    color: #000;
+    cursor: pointer
+}
+
+div.phoneNumberLogin .phnum div.retryOtp.isActivated p:hover {
+    text-decoration: underline
+}
+
+div.phoneNumberLogin select {
+    margin-left: 60px;
+    width: 200px;
+    margin-top: 8px;
+    margin-bottom: 0
+}
+
+@media(max-width: 480px) {
+    div.phoneNumberLogin select {
+        width:inherit;
+        margin-left: 10px
+    }
+}
+
+div.phoneNumberLogin .error {
+    clear: both;
+    text-align: center;
+    color: red;
+    font-size: .8em;
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+div.phoneNumberLogin.outsideDialog {
+    width: 400px;
+    max-width: 100%;
+    padding: 30px
+}
+
+div.phoneNumberLogin .emailLoginBtn svg {
+    margin-right: 10px;
+    margin-top: -3px
+}
+
+div.phoneNumberLogin .employeeLoginMessage {
+    color: red;
+    text-align: center
+}
+
+.phone-input {
+    display: flex;
+    padding: 10px;
+    margin: 0 0 0 5px;
+    font-size: 18px;
+    appearance: none;
+    box-shadow: none;
+    border: none !important;
+    width: 100% !important;
+    background-color: white;
+    color: black;
+    outline: 0 !important;
+  }
+  .phone-i{
+    border-bottom: solid 2px #c9c9c9 !important;
+    padding-bottom: 5px;
+
+  }
+  
+  .phone-i:hover {
+    border: none !important;
+    outline: 0 !important;
+    border-bottom: solid 2px #ff7517 !important;
+  }
+
+
+  .phone-dropdown {
+    outline: 0 !important;
+    border: none !important;
+    background-color: white;
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none !important;
+    border-bottom: solid 2px #c9c9c9 !important;
+  }
+  .phone-dropdown:hover {
+    border: none !important;
+    outline: 0 !important;
+    border-bottom: solid 2px #ff7517 !important;
+  }
+  
+  .phone-dropdown .country {
+    padding: 5px 10px;
+  }
+  
+  .phone-dropdown .country:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .phone-dropdown .selected-flag {
+    display: flex;
+    align-items: center;
+  }
+  
+  .phone-dropdown .selected-flag .flag {
+    margin-right: 8px;
+  }
+
+
+
+
+
+
+
+div.phoneNumberLogin form {
+    padding-top: 10px
+}
+
+div.phoneNumberLogin form .mui-Input {
+    margin-bottom: 30px
+}
+
+div.phoneNumberLogin form .errorContainer>span {
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: red;
+    padding-bottom: 15px
+}
+
+div.phoneNumberLogin form div.retryOtp p {
+    text-align: center;
+    color: gray
+}
+
+div.phoneNumberLogin form div.retryOtp.isActivated p {
+    color: #000;
+    cursor: pointer
+}
+
+div.phoneNumberLogin form div.retryOtp.isActivated p:hover {
+    text-decoration: underline
+}
+
+div.phoneNumberLogin select {
+    margin-left: 60px;
+    width: 200px;
+    margin-top: 8px;
+    margin-bottom: 0
+}
+
+@media(max-width: 480px) {
+    div.phoneNumberLogin select {
+        width:inherit;
+        margin-left: 10px
+    }
+}
+
+div.phoneNumberLogin .error {
+    clear: both;
+    text-align: center;
+    color: red;
+    font-size: .8em;
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+div.phoneNumberLogin.outsideDialog {
+    width: 400px;
+    max-width: 100%;
+    padding: 30px
+}
+
+div.phoneNumberLogin .emailLoginBtn svg {
+    margin-right: 10px;
+    margin-top: -3px
+}
+
+div.phoneNumberLogin .employeeLoginMessage {
+    color: red;
+    text-align: center
+}
+
+div.referralLoginForm form {
+    display: flex;
+    flex-flow: row wrap
+}
+
+div.referralLoginForm form .phoneNumberInputContainer {
+    order: 1;
+    -webkit-order: 1;
+    margin-right: 15px
+}
+
+div.referralLoginForm form .actions {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    order: 2;
+    -webkit-order: 2
+}
+
+div.phoneNumberLoginField.focused {
+    margin-bottom: 9px
+}
+
+div.phoneNumberLoginField.error .Input {
+    border-bottom: solid 2px red
+}
+
+div.phoneNumberLoginFieldSecond {
+    margin-bottom: 0;
+    position: relative
+}
+
+div.phoneNumberLoginFieldSecond div.Input {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    -webkit-align-items: flex-end;
+    -webkit-justify-content: center
+}
+
+div.phoneNumberLoginFieldSecond div.placeholder {
+    text-align: center;
+    padding-top: 20%
+}
+
+div.phoneNumberLoginFieldSecond Input {
+    display: flex;
+    font-size: 16px;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    transition: border .3s;
+    width: 100%;
+    padding-left: 2%
+}
+
+div.phoneNumberLoginFieldSecond Input:focus {
+    outline: 0
+}
+
+div.phoneNumberLoginFieldSecond Input .barrier {
+    text-align: center
+}
+
+
+.emailInputField{
+    border-bottom: solid 2px #c9c9c9 !important;
+    padding-bottom: 5px;
+}
+.emailInputField:hover{
+    border-bottom: solid 2px #eb484b !important;
+}
+.passwordInputField{
+    border-bottom: solid 2px #c9c9c9 !important;
+    padding-bottom: 5px; 
+}
+.passwordInputField:hover{
+    border-bottom: solid 2px #eb484b !important;
+}
