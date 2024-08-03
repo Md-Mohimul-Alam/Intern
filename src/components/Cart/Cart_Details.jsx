@@ -153,7 +153,7 @@ const Cart_Details = ({ isOpen, onCartClick, toggleCart }) => {
                                         </ul>
                                     </div>
                                     <div className="footer_cart">
-                                        <div className="shoppingtCartActionButtons" onClick={handleShowLoginPopup}>
+                                        <div className="shoppingCartActionButtons" onClick={handleShowLoginPopup}>
                                             <div id="placeOrderButton">
                                                 <span className="placeOrderText" style={{ display:'flex',flexDirection:'column', justifyContent:'center',alignItems:'center',}}>
                                                     <span>Place Order</span>

@@ -48,7 +48,6 @@ const handlePlaceOrder = async (userId) => {
     const totalPrice = parseFloat(window.localStorage.getItem('totalPrice')) || 0;
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-    // Prepare order details
     const orderDetails = {
         userId: userId,
         items: await Promise.all(cart.map(async (cartItem) => {

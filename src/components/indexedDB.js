@@ -215,3 +215,22 @@ export const getPersonalInfoByUserId = (userId) => {
     }
   });
 };
+
+const getDbInstance = async () => {
+  return openDB('YourDBName', 1, {
+      upgrade(db) {
+          db.createObjectStore('cart', { keyPath: 'id' });
+          db.createObjectStore('items', { keyPath: 'id' });
+      },
+  });
+};
+
+const getCartItems = async () => {
+  const db = await getDbInstance();
+  return db.getAll('cart');
+};
+
+const getItemDetails = async (itemId) => {
+  const db = await getDbInstance();
+  return db.get('items', itemId);
+};

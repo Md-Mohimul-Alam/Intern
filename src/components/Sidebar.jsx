@@ -124,7 +124,7 @@ const Sidebar = ({ isOpen }) => {
     return (
         <div>
             {!isOpen ? (
-                <div className="left-sidebar hidden-md-down">
+                <div className="left-sidebar hidden-md-down" style={{zIndex:'100'}}>
                     <div className="filter-wrapper">
                         <div className="filter-list">
                             <div className="nav-item" title="All Product">
@@ -666,7 +666,7 @@ const Sidebar = ({ isOpen }) => {
                                             <li className="sidebar-dropdown-item"  onClick={() => handleSubcategoryClick('Grocery')}>
                                                 <div className="FIrst_1" title="Canned and Packed Food">
                                                     <img src={Canned_and_Packed_Food} className="img-fluid cat-img" alt="Canned and Packed Food" />
-                                                    Canned & Packed Food
+                                                    Canned & Packed
                                                 </div>
                                             </li>
                                             <li className="sidebar-dropdown-item"  onClick={() => handleSubcategoryClick('Grocery')}>
@@ -708,7 +708,7 @@ const Sidebar = ({ isOpen }) => {
                                             <li className="sidebar-dropdown-item"  onClick={() => handleSubcategoryClick('Grocery')}>
                                                 <div className="FIrst_1" title="Noodle, Pasta & Shemai">
                                                     <img src={Noodle_Pasta_Shemai} className="img-fluid cat-img" alt="Noodle, Pasta & Shemai" />
-                                                    Noodle,Pasta & Shemai
+                                                    Noodle,Pasta
                                                 </div>
                                             </li>
                                             <li className="sidebar-dropdown-item"  onClick={() => handleSubcategoryClick('Grocery')}>

@@ -107,14 +107,14 @@ export const CartProvider = ({ children }) => {
     const items = [
         { id: 1, name: 'Meharban Ghee 794g', category: 'dairy-eggs', subcategories: 'butter-margarine', price: 11.99, tott: 'each', image: '/uploads/product/logo/meharban_ghee.jpeg' },
         { id: 2, name: 'AL RAYAN EXTRA LONG BASMATI RICE', category: 'grocery', subcategories: 'rice-grains', price: 25.00, tott: '2Bags/20lb', image: '/uploads/product/logo/AL_RAYAN_EXTRA_LONG_GRAIN_BASMATI_RICE.jpg' },
-        { id: 3, name: 'Idaho Potato Bag (5lb)', category: 'fruits-vegetable', subcategories: 'fresh-vegetables', price: 2.99, tott: 'each Bag', image: '/uploads/product/logo/Idaho_Potato_Bag.png' },
+        { id: 3, name: 'Idaho Potato Bag (5lb)', category: 'fruits-vegetable', subcategories: 'fresh-vege', price: 2.99, tott: 'each Bag', image: '/uploads/product/logo/Idaho_Potato_Bag.png' },
         { id: 4, name: 'YUMZY NOODLES CHICKEN FLAVOR', category: 'grocery', subcategories: 'noodle-pasta-shemai', price: 5.00, tott: '3 Pack', image: '/uploads/product/logo/YUMZY-CHICKENNOODLES-8PK.jpg' },
         { id: 5, name: 'Maggi Soup', category: 'grocery', subcategories: 'noodle-pasta-shemai', price: 5.00, tott: '3 PCS', image: '/uploads/product/logo/Maggi_Soup.png' },
         { id: 6, name: 'Regular Whole Chicken 4lb', category: 'fresh-meat', subcategories: 'chicken', price: 10.99, tott: 'each', image: '/uploads/product/logo/Regular Whole Chicken.jpeg' }, 
         { id: 7, name: 'Chicken Quarter Leg (No Cut No Clean)', category: 'fresh-meat', subcategories: 'chicken', price: 1.49, tott: 'lb', image: '/uploads/product/logo/Chicken_Quarter_Leg.jpeg' },
         { id: 8, name: 'Frozen Whole Baby Goat', category: 'fresh-meat', subcategories: 'mutton-goat', price: 29.99, tott: '5 lb', image: '/uploads/product/logo/Frozen_Whole_Baby_Goat.png' },
         { id: 9, name: 'Frozen Baby Goat Precut', category: 'fresh-meat', subcategories: 'mutton-goat', price: 5.99, tott: 'lb', image: '/uploads/product/logo/Frozen Baby Goat Precut.jpeg' },
-        { id: 10, name: 'Beef Precut', category: 'frozen-food', subcategories: 'frozen-beef-mutton-lamb', price: 4.49, tott: 'lb', image: '/uploads/product/logo/Beef_Precut.png' },
+        { id: 10, name: 'Beef Precut', category: 'frozen-food', subcategories: 'all', price: 4.49, tott: 'lb', image: '/uploads/product/logo/Beef_Precut.png' },
         { id: 11, name: 'Hi 5 Wafer', category: 'bakery-snacks', subcategories: 'cookies-biscuit', price: 5.00, tott: '3 PCS', image: '/uploads/product/logo/Hi_5_Wafer.png' },
         { id: 12, name: 'Regular Gallon Milk', category: 'dairy-eggs', subcategories: 'milk-cream', price: 3.99, tott: 'each', image: '/uploads/product/logo/regular_milk.jpeg' },
         { id: 13, name: 'Hilash 10/12 size', category: 'fish', subcategories: 'frozen-fish', price: 29.99, tott: 'each', image: '/uploads/product/logo/Hilsha_r3zE12O.jpg' },
@@ -125,9 +125,9 @@ export const CartProvider = ({ children }) => {
         { id: 18, name: 'AL RAYAN BASMATI RICE 20 lb', category: 'grocery', subcategories: 'rice-grains', price: 18.99, tott: 'each', image: '/uploads/product/logo/Al-Rayan_20lb.jpg' },
         { id: 19, name: 'SHAHJALAL BASMATI RICE (20 LB)', category: 'grocery', subcategories: 'rice-grains', price: 19.99, tott: 'each', image: '/uploads/product/logo/SHAHJALAL.jpeg' },
         { id: 20, name: 'DELTA STAR RICE 50lb ( limit only 1)', category: 'grocery', subcategories: 'rice-grains', price: 37.99, tott: '50lb', image: '/uploads/product/logo/images_2.jpg' },
-        { id: 21, name: 'Broccoli', category: 'fruits-vegetable', subcategories: 'fresh-vegetables', price: 2.99, tott: 'lb', image: '/uploads/product/logo/Broccoli.jpg' },
+        { id: 21, name: 'Broccoli', category: 'fruits-vegetable', subcategories: 'fresh-vege', price: 2.99, tott: 'lb', image: '/uploads/product/logo/Broccoli.jpg' },
         { id: 22, name: 'TELAPIA FILLET', category: 'fish', subcategories: 'fish-fille', price: 3.49, tott: 'lb', image: '/uploads/product/logo/TELAPIA_FILLET.jpg' },
-        { id: 23, name: 'Fresh Garlic', category: 'fruits-vegetable', subcategories: 'fresh-vegetables', price: 5.00, tott: '3 pack', image: '/uploads/product/logo/Fresh-Normal-White-Garlic-of-2018.jpg' },
+        { id: 23, name: 'Fresh Garlic', category: 'fruits-vegetable', subcategories: 'fresh-vege', price: 5.00, tott: '3 pack', image: '/uploads/product/logo/Fresh-Normal-White-Garlic-of-2018.jpg' },
         { id: 24, name: 'Rehmat-e-Shereen Almond Chocolate Cookies', category: 'bakery-snacks', subcategories: 'cookies-biscuit', price: 3.99, tott: 'each', image: '/uploads/product/logo/HelloIMG1722201335960.jpeg' },
         { id: 25, name: 'Rehmat-e-Shereen Black Seed Cookies', category: 'bakery-snacks', subcategories: 'cookies-biscuit', price: 3.99, tott: 'each', image: '/uploads/product/logo/rehmat_e_shereem_black_seed_cookies_8QHKbHK.jpeg' },
         { id: 26, name: 'Rehmat-e-Shereen Black Seed Cookies', category: 'bakery-snacks', subcategories: 'cookies-biscuit', price: 3.99, tott: 'each', image: '/uploads/product/logo/rehmat_e_shereem_black_seed_cookies_8QHKbHK.jpeg' },
@@ -674,7 +674,7 @@ export const CartProvider = ({ children }) => {
             path: "frozen-food",
             subcategories: [
                 { title: "Frozen Vegetables", image: frozenVeg, path: "frozen-vegetables" },
-                { title: "Frozen beef Mutton Lamb ", image: beefMuttonLambImage, path: "beefMuttonLambImage" },
+                { title: "Frozen beef Mutton Lamb ", image: beefMuttonLambImage, path: "all" },
                 { title: "Frozen Fruits", image: freshFruitImage, path: "frozen-fruits" },
                 { title: "Frozen Meals", image: breakfastFoodImage, path: "frozen-meals" },
                 { title: "Frozen Snacks", image: frozenSnacksMealsImage, path: "frozen-snacks" },
@@ -689,7 +689,7 @@ export const CartProvider = ({ children }) => {
             path: "fruits-vegetable",
             subcategories: [
                 { title: "Fresh Fruits", image: freshFruitImage, path: "fresh-fruits" },
-                { title: "Fresh Vegetables", image: freshVegetableImage, path: "fresh-vegetables" },
+                { title: "Fresh Vegetables", image: freshVegetableImage, path: "fresh-vege" },
                 { title: "Frozen Vegetable & Fruits", image: frozenVeg, path: "packaged-fruits-vegetables" }
             ]
         },

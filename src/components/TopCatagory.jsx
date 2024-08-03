@@ -40,14 +40,14 @@ const TopCategories = () => {
                                 <span></span>
                             </h2>
                         </div>
-                        <div style={{ paddingLeft: '50px' }}>
-                            <div className="scrollButtons" style={{ width: '450px', display: 'flex' }}>
+                        <div >
+                            <div className="scrollButtons" style={{cursor:'pointer', width: 'auto', display: 'flex' }}>
                                 <div className="scrollLeft" onClick={() => scrollLeft(categoryListRef)} style={{ backgroundColor: 'white', alignItems: 'center' }}>
                                     <KeyboardArrowLeftIcon/>
                                 </div>
                                 <span> &nbsp;&nbsp; &nbsp;</span>
                                 <div className="viewButton hidden-xs hidden-sm" onClick={handleShowAllClick} style={{ cursor: 'pointer' }}>
-                                    <p style={{ paddingTop: '10px', marginBottom: '11px' }}> {showAllItems ? 'Hide All Products' : 'View All Products'}                                    </p>
+                                    <p style={{ paddingTop: '10px', marginBottom: '10px',marginRight:'0px',padding:'5px' }}> {showAllItems ? 'Hide All Products' : 'View All Products'}                                    </p>
                                 </div>
                                 <span> &nbsp;&nbsp; </span>
                                 <div className="scrollRight" onClick={() => scrollRight(categoryListRef)} style={{ background: 'white', alignItems: 'center' }}>
@@ -141,14 +141,15 @@ const TopCategories = () => {
                             </h2>
                         </div>
                         <div style={{ paddingLeft: '50px' }}>
-                            <div className="scrollButtons" style={{ width: '450px', display: 'flex' }}>
+                            <div className="scrollButtons" style={{cursor:'pointer', width: '450px', display: 'flex' }}>
                                 <div className="scrollLeft" onClick={() => scrollLeft(categoryListRef)} style={{ backgroundColor: 'white', alignItems: 'center' }}>
                                     <KeyboardArrowLeftIcon />
                                 </div>
                                 <span> &nbsp;&nbsp; &nbsp;</span>
                                 <div className="viewButton hidden-xs hidden-sm" onClick={handleShowAllClick} style={{ cursor: 'pointer' }}>
-                                    <p style={{ paddingTop: '10px', marginBottom: '11px' }}>Click to Scrole</p>
-                                    
+                                    <span> </span>
+                                    <p style={{ paddingTop: '10px', marginBottom: '10px',marginRight:'0px',padding:'5px' }}>Click to Scrole</p>
+                                    <span></span>
                                 </div>
                                 <span> &nbsp;&nbsp; </span>
                                 <div className="scrollRight" onClick={() => scrollRight(categoryListRef)} style={{ background: 'white', alignItems: 'center' }}>
