@@ -28,7 +28,7 @@ const ProductCard = ({
 
     const updateLocalStorage = (quantity) => {
         localStorage.setItem(`product-${id}`, JSON.stringify({
-            name:name,
+            name: name,
             currentQuantity: quantity,
             totalPrice: quantity * price,
             isInWishlist
@@ -55,7 +55,11 @@ const ProductCard = ({
     };
 
     const handleAddToCart = () => {
-        addToCart({ id, title, price }, currentQuantity);
+        if (currentQuantity > 0) {
+            addToCart({ id, title, price, name }, currentQuantity);
+        } else {
+            console.warn('Quantity must be greater than 0 to add to cart');
+        }
     };
 
     const toggleWishlist = () => {
@@ -145,12 +149,10 @@ const ProductCard = ({
                             </div>
                         </form>
                     </div>
-                    <div className="spinner" id={`product-component-spinner-${id}`} style={{ display: 'none' }}>
-                        <img className="img-fluid" src="static/img/spinner.gif" alt="Loading spinner" />
-                    </div>
                 </div>
             </div>
         </div>
     );
 };
+
 export default ProductCard;

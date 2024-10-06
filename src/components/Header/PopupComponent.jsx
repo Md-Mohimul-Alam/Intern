@@ -8,13 +8,9 @@ import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import Stack from '@mui/material/Stack';
 import gif from '../Header/output-onlinegiftools.gif';
-import { addOrder } from '../indexedDB'; // Adjust the path as needed
+import { addOrder } from '../indexedDB';
 import { useCart } from "../ContextApi";
-
-
-
-
-
+import Card_drop from './card_drop'; // Adjust the path as needed
 
 const PopupComponent = ({ show, handleClose, onLoginSuccess }) => {
     const { items, clearCart } = useCart();
@@ -38,56 +34,63 @@ const PopupComponent = ({ show, handleClose, onLoginSuccess }) => {
     const [alertMessage, setAlertMessage] = useState('');
     const [alertSeverity, setAlertSeverity] = useState('success'); // default to 'success'
 
+    // Card_drop states
+    const [showCardDrop, setShowCardDrop] = useState(false);
+    const [orderDetails, setOrderDetails] = useState(null);
+
     const handleRadioChange = (e) => {
-      setDeliveryType(e.target.value);
-    };
-    
-const handlePlaceOrder = async (userId) => {
-    // Retrieve data from localStorage
-    const cart = JSON.parse(window.localStorage.getItem('cart')) || [];
-    const totalPrice = parseFloat(window.localStorage.getItem('totalPrice')) || 0;
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-    const orderDetails = {
-        userId: userId,
-        items: await Promise.all(cart.map(async (cartItem) => {
-            const item = items.find(i => i.id === cartItem.id); // Retrieve the full item details
-            if (!item) {
-                console.warn(`Item with ID ${cartItem.id} not found in items.`);
-                return null; // Skip if item not found
-            }
-            const { name, price } = item; // Extract name from the item
-            const { id, quantity } = cartItem;
-            const total = price * quantity;
-            return {
-                id: id,
-                name: name, // Include product name
-                price: price,
-                quantity: quantity,
-                total: total,
-            };
-        })),
-        totalPrice: totalPrice,
-        totalItems: totalItems,
+        setDeliveryType(e.target.value);
     };
 
-    console.log("Prepared order details:", orderDetails); // Log prepared order details
+    const handlePlaceOrder = async (userId) => {
+        // Retrieve data from localStorage
+        const cart = JSON.parse(window.localStorage.getItem('cart')) || [];
+        const totalPrice = parseFloat(window.localStorage.getItem('totalPrice')) || 0;
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-    try {
-        const orderId = await addOrder(orderDetails); // Call addOrder with orderDetails
-        console.log("Order placed successfully with ID:", orderId);
-        clearCart();
-    } catch (error) {
-        console.error("Failed to place order:", error);
-    }
-};
+        const orderDetails = {
+            userId: userId,
+            items: await Promise.all(cart.map(async (cartItem) => {
+                const item = items.find(i => i.id === cartItem.id); // Retrieve the full item details
+                if (!item) {
+                    console.warn(`Item with ID ${cartItem.id} not found in items.`);
+                    return null; // Skip if item not found
+                }
+                const { name, price } = item; // Extract name from the item
+                const { id, quantity } = cartItem;
+                const total = price * quantity;
+                return {
+                    id: id,
+                    name: name, // Include product name
+                    price: price,
+                    quantity: quantity,
+                    total: total,
+                };
+            })),
+            totalPrice: totalPrice,
+            totalItems: totalItems,
+        };
+
+        console.log("Prepared order details:", orderDetails); // Log prepared order details
+
+        try {
+            const orderId = await addOrder(orderDetails); // Call addOrder with orderDetails
+            console.log("Order placed successfully with ID:", orderId);
+            clearCart();
+            setOrderDetails(orderDetails); // Set the order details
+            setShowCardDrop(true); // Show the Card_drop modal
+            if (onLoginSuccess) onLoginSuccess(userId);
+        } catch (error) {
+            console.error("Failed to place order:", error);
+        }
+    };
+
     useEffect(() => {
         if (alertSeverity === 'success' && open && userId) {
             const placeOrderAndClose = async () => {
                 try {
                     await handlePlaceOrder(userId);
                     handleClose();
-                    if (onLoginSuccess) onLoginSuccess(userId);
                 } catch (error) {
                     console.error("Error placing order:", error);
                 }
@@ -95,79 +98,78 @@ const handlePlaceOrder = async (userId) => {
             const timer = setTimeout(placeOrderAndClose, 5000);
             return () => clearTimeout(timer);
         }
-    }, [alertSeverity, open, handleClose, onLoginSuccess, userId]);
-    
+    }, [alertSeverity, open, handleClose, userId]);
 
     const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      try {
-          if (usePhone) {
-              if (isRegister) {
-                  if (await userExists(phone, 'phone')) {
-                      setAlertMessage('User already exists');
-                      setAlertSeverity('error');
-                      setOpen(true);
-                      return;
-                  }
-                  await addUser({ phone, password }, 'phone');
-                  setAlertMessage('User registered successfully');
-                  setAlertSeverity('success');
-                  setOpen(true);
-              } else {
-                  const user = await getUserByPhone(phone);
-                  if (user && user.password === password) {
-                      setAlertMessage('Login successful');
-                      setAlertSeverity('success');
-                      setOpen(true);
-                      setUserId(user.id); // Set userId after successful login
-                  } else {
-                      setAlertMessage('Invalid credentials');
-                      setAlertSeverity('error');
-                      setOpen(true);
-                  }
-              }
-          } else {
-              if (isRegister) {
-                  if (await userExists(email, 'email')) {
-                      setAlertMessage('User already exists');
-                      setAlertSeverity('error');
-                      setOpen(true);
-                      return;
-                  }
-                  await addUser({ email, password }, 'email');
-                  setAlertMessage('User registered successfully');
-                  setAlertSeverity('success');
-                  setOpen(true);
-              } else {
-                  const user = await getUserByEmail(email);
-                  if (user && user.password === password) {
-                      setAlertMessage('Login successful');
-                      setAlertSeverity('success');
-                      setOpen(true);
-                      setUserId(user.id); // Set userId after successful login
-                  } else {
-                      setAlertMessage('Invalid credentials');
-                      setAlertSeverity('error');
-                      setOpen(true);
-                  }
-              }
-          }
-      } catch (error) {
-          console.error('Error during authentication:', error); // Log detailed error information
-          setAlertMessage('An error occurred');
-          setAlertSeverity('error');
-          setOpen(true);
-      }
-  };
-  
+        e.preventDefault();
+
+        try {
+            if (usePhone) {
+                if (isRegister) {
+                    if (await userExists(phone, 'phone')) {
+                        setAlertMessage('User already exists');
+                        setAlertSeverity('error');
+                        setOpen(true);
+                        return;
+                    }
+                    await addUser({ phone, password }, 'phone');
+                    setAlertMessage('User registered successfully');
+                    setAlertSeverity('success');
+                    setOpen(true);
+                } else {
+                    const user = await getUserByPhone(phone);
+                    if (user && user.password === password) {
+                        setAlertMessage('Login successful');
+                        setAlertSeverity('success');
+                        setOpen(true);
+                        setUserId(user.id);
+                    } else {
+                        setAlertMessage('Invalid credentials');
+                        setAlertSeverity('error');
+                        setOpen(true);
+                    }
+                }
+            } else {
+                if (isRegister) {
+                    if (await userExists(email, 'email')) {
+                        setAlertMessage('User already exists');
+                        setAlertSeverity('error');
+                        setOpen(true);
+                        return;
+                    }
+                    await addUser({ email, password }, 'email');
+                    setAlertMessage('User registered successfully');
+                    setAlertSeverity('success');
+                    setOpen(true);
+                } else {
+                    const user = await getUserByEmail(email);
+                    if (user && user.password === password) {
+                        setAlertMessage('Login successful');
+                        setAlertSeverity('success');
+                        setOpen(true);
+                        setUserId(user.id); // Set userId after successful login
+                    } else {
+                        setAlertMessage('Invalid credentials');
+                        setAlertSeverity('error');
+                        setOpen(true);
+                    }
+                }
+            }
+        } catch (error) {
+            console.error('Error during authentication:', error); // Log detailed error information
+            setAlertMessage('An error occurred');
+            setAlertSeverity('error');
+            setOpen(true);
+        }
+    };
+
     const handlePersonalInfoSubmit = async (e) => {
         e.preventDefault();
         if (userId) {
             try {
-                await addPersonalInfo({ id: userId, name, address, road, house, block,deliveryType });
+                await addPersonalInfo({ id: userId, name, address, road, house, block, deliveryType });
                 setAlertMessage('Personal info submitted successfully');
-                clearCart
+                clearCart(); // Assuming this is a typo; should clear the cart
                 setAlertSeverity('success');
                 setOpen(true);
             } catch (error) {
@@ -184,11 +186,14 @@ const handlePlaceOrder = async (userId) => {
         setOpen(false);
     };
 
+
     return (
         <Modal show={show} onHide={handleClose} >
             <Modal.Header closeButton>
-                <Modal.Title style={{ paddingLeft: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Modal.Title style={{ paddingLeft: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <span> </span>
+                    <span> </span>
+
                     <span>
                         {userId ? 'Personal Info' : (isRegister ? 'Register' : 'Login')}
                     </span>
@@ -416,6 +421,13 @@ const handlePlaceOrder = async (userId) => {
                     </div>
                 </div>
             </Modal.Body>
+            {showCardDrop && (
+                <Card_drop
+                    show={showCardDrop}
+                    handleClose={() => setShowCardDrop(false)}
+                    orderDetails={orderDetails}
+                />
+            )}
             <Modal.Footer>
                 <Stack spacing={2} sx={{ width: '100%' }}>
                     <Snackbar open={open} autoHideDuration={6000} onClose={handleCloseSnackbar}>

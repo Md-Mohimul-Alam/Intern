@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './header.css';
 import logo from './logo.png';
 import crt from './cart-b.png';
@@ -9,16 +9,16 @@ import PopupComponent from './PopupComponent'; // Import PopupComponent for Logi
 import Card_drop from './card_drop';
 
 const Header = ({ onHamburgerClick }) => {
-  const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [showTrackOrderPopup, setShowTrackOrderPopup] = useState(false);
   const [showCartPopup, setShowCartPopup] = useState(false);
+  const navigate = useNavigate(); // Use navigate hook
 
   useEffect(() => {
     // Check localStorage for the showCartPopup flag on component mount
     const shouldShowCartPopup = window.localStorage.getItem('showCartPopup');
     if (shouldShowCartPopup === 'true') {
-        setShowCartPopup(true);
-        window.localStorage.removeItem('showCartPopup'); // Remove the flag
+      setShowCartPopup(true);
+      window.localStorage.removeItem('showCartPopup'); // Remove the flag
     }
   }, []);
 
@@ -26,21 +26,11 @@ const Header = ({ onHamburgerClick }) => {
   const handleShowCartPopup = () => {
     setShowCartPopup(true);
     setShowTrackOrderPopup(false);
-    setShowLoginPopup(false);
   };
 
-  const handleCloseLoginPopup = () => setShowLoginPopup(false);
-  const handleShowLoginPopup = () => {
-    setShowLoginPopup(true);
-    setShowTrackOrderPopup(false);
-    setShowCartPopup(false);
-  };
   const handleCloseTrackOrderPopup = () => setShowTrackOrderPopup(false);
   const handleShowTrackOrderPopup = () => {
     setShowTrackOrderPopup(true);
-    setShowLoginPopup(false);
-    setShowCartPopup(false);
-
   };
 
   return (
@@ -75,22 +65,23 @@ const Header = ({ onHamburgerClick }) => {
         </div>
 
         <div className="Second">
-            <div onClick={handleShowTrackOrderPopup} style={{ height:'28px', width:'140px', display:'flex', alignItems: 'center', justifyContent:'center', paddingRight:'5px'}}>
-                <span className="trackOrder" >Track Order</span>
-            </div>
-            {showTrackOrderPopup && <ModalComponent show={showTrackOrderPopup} handleClose={handleCloseTrackOrderPopup} />}
-
-            <div onClick={handleShowLoginPopup} style={{ height:'28px', width:'136px', display:'flex', alignItems: 'center', justifyContent:'center', paddingRight:'20px'}}>
-                <span id="loginRegister"> Login </span>
-            </div>
-            {showLoginPopup && <PopupComponent show={showLoginPopup} handleClose={handleCloseLoginPopup} />}
+          <div 
+            onClick={handleShowTrackOrderPopup} 
+            style={{ height:'28px', width:'140px', display:'flex', alignItems: 'center', justifyContent:'center', paddingRight:'5px'}}
+          >
+            <span className="trackOrder">Track Order</span>
+          </div>
+          {showTrackOrderPopup && <ModalComponent show={showTrackOrderPopup} handleClose={handleCloseTrackOrderPopup} />}
         </div>
 
-        <div className="Third" >
-          <div onClick={handleShowCartPopup}  style={{ alignItems: 'center', height: '28px', width: '61px', justifyContent:'center' }}>
+        <div className="Third">
+          <div 
+            onClick={handleShowCartPopup} 
+            style={{ alignItems: 'center', height: '31px', width: '111px', justifyContent:'center' }}
+          >
             <span className="btn">
               <img src={crt} className="logo" alt="logo" style={{height:'27px', width:'28px', paddingRight:'3px', marginRight:'3px'}} />
-              <span>Cart </span>
+              <span>Previous Order</span>
             </span>
           </div>
           {showCartPopup && <Card_drop show={showCartPopup} handleClose={handleCartClosePopup} />}
